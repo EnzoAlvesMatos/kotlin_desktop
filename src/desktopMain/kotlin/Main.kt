@@ -1,7 +1,9 @@
 // src/desktopMain/kotlin/Main.kt
 import androidx.compose.desktop.ui.tooling.preview.Preview
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Button
 import androidx.compose.material.Text
+import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -22,11 +24,17 @@ fun main() = application {
 @Composable
 @Preview
 fun App() {
-    var text by remember { mutableStateOf("Hello, Compose Desktop!") }
+    var texto = remember { mutableStateOf(value = "TxInicial") }
+    Column () {
+    TextField(value = texto.value, onValueChange = {
+
+        texto.value = it
+    })
 
     Button(onClick = {
-        text = "Hello, Kotlin & Maven!"
+        texto.value = "Hello, Compose Desktop!"
     }) {
-        Text(text)
+        Text(texto.value)
+    }
     }
 }

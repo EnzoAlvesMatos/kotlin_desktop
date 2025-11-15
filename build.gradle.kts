@@ -1,5 +1,9 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
+kotlin {
+    jvmToolchain(22) // ou 23, 24 — escolha UMA versão
+}
+
 plugins {
     kotlin("jvm") version "2.0.0"
     id("org.jetbrains.compose") version "1.6.10"
